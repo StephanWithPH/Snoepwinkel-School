@@ -2,9 +2,9 @@
     <div class="row bg-dark">
         <div class="col-12">
             <div class="text-center pb-1 pt-1">
-                <h6 class="text-white d-inline mr-3"><i class="fab fa-ideal"></i> Veilig betalen met iDeal</h6>
-                <h6 class="mt-1 mb-1 text-white d-inline mr-3"><i class="fas fa-truck"></i> Verzending in 2 werkdagen!</h6>
-                <h6 class="mt-1 mb-1 text-white d-inline"><i class="fab fa-facebook-f"></i> Volg ons op Facebook!</h6>
+                <h6 class="text-white d-inline mr-3"><i class="fab fa-ideal"></i> {{ __('topbar.safepayment') }}</h6>
+                <h6 class="mt-1 mb-1 text-white d-inline mr-3"><i class="fas fa-truck"></i> {{ __('topbar.shippingxdays') }}</h6>
+                <h6 class="mt-1 mb-1 text-white d-inline"><i class="fab fa-facebook-f"></i> {{ __('topbar.followsocial') }}</h6>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <input class="form-control border-primary" placeholder="Typ een zoekwoord...">
+                    <input class="form-control border-primary" placeholder="{{ __('topbar.searchplaceholder') }}">
                 </div>
             </div>
         </div>
@@ -31,13 +31,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link">Home</a>
+                            <a class="nav-link">{{ __('topbar.home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Lolly's</a>
+                            <a class="nav-link">{{ __('topbar.lollys') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Dropjes</a>
+                            <a class="nav-link">{{ __('topbar.liquorice') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link">Zuurstokken</a>
@@ -45,13 +45,13 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link">Alle categorieën</a>
+                            <a class="nav-link">{{ __('topbar.allcategories') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Verzendinformatie</a>
+                            <a class="nav-link">{{ __('topbar.shippinginformation') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Over ons</a>
+                            <a class="nav-link">{{ __('topbar.aboutus') }}</a>
                         </li>
                     </ul>
                 </div>

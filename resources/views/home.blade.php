@@ -11,7 +11,7 @@
 <div class="container mt-5">
     <h3 class="mb-4">Producten</h3>
     <div class="row">
-        <div class="col-3">
+        <div class="col-lg-3 col-6">
             <div class="card w-100 border-0">
                 <img class="card-img-top" src="https://www.sport.be/media/photos/2017/juli/winegums.jpg" alt="Card image cap">
                 <div class="card-body my-3 p-0">
