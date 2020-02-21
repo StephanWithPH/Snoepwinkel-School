@@ -22,7 +22,12 @@
             </div>
         </div>
     </div>
+</div>
 
+<div class="container-fluid p-0">
+    <div class="image w-100 text-center">
+        <img class="w-100" src="{{asset('img/redband-banner.png')}}">
+    </div>
 </div>
 
 @endsection
