@@ -16,8 +16,12 @@
                         <img style="width:300px" src={{ asset('img/logo.png') }}>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-5">
                     <input class="form-control border-primary" placeholder="{{ __('topbar.searchplaceholder') }}">
+
+                </div>
+                <div class="col-1">
+                    <a href="#">Mijn account</a>
                 </div>
             </div>
         </div>
