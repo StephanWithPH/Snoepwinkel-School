@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@loadHomePage');
+
+Route::get('/cart/add/{id}', 'CartController@addToCart');
+
+
+
 
 Route::get('/oldwelcome', function () {
     return view('welcome');

@@ -9,18 +9,25 @@
     </div>
 </div>
 <div class="container mt-5">
-    <h3 class="mb-4">Producten</h3>
+    <h3 class="mb-4">{{ __('home.products') }}</h3>
     <div class="row">
-        <div class="col-lg-3 col-6">
-            <div class="card w-100 border-0">
-                <img class="card-img-top" src="https://www.sport.be/media/photos/2017/juli/winegums.jpg" alt="Card image cap">
-                <div class="card-body my-3 p-0">
-                    <h5 class="card-title">Winegums</h5>
-                    <h6 class="d-inline">5,60</h6>
-                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-cart-plus"></i></a>
+        @forelse($products as $product)
+            <div class="col-lg-3 col-6">
+                <div class="card w-100 border-0">
+                    <img class="card-img-top" src="{{$product->image}}" alt="Card image cap">
+                    <div class="card-body my-3 p-0">
+                        <h5 class="card-title">{{$product->name}}</h5>
+                        <h6 class="d-inline">{{$product->price}}</h6>
+                        <a href="{{action('CartController@addToCart', $product->id)}}" class="btn btn-sm btn-info"><i class="fas fa-cart-plus"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @empty
+            <div class="col-12">
+                <p class="text-center">{{ __('home.noproductsfound') }}</p>
+            </div>
+        @endforelse
+
     </div>
 </div>
 
