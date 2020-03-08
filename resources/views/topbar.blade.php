@@ -13,7 +13,9 @@
             <div class="row align-items-center">
                 <div class="col-6">
                     <div class="mt-3 mb-3">
-                        <img style="width:300px" src={{ asset('img/logo.png') }}>
+                        <a href="{{action('HomeController@loadHomePage')}}">
+                            <img style="width:300px" src={{ asset('img/logo.png') }}>
+                        </a>
                     </div>
                 </div>
                 <div class="col-5">
@@ -21,7 +23,7 @@
 
                 </div>
                 <div class="col-1">
-                    <a href="#">Mijn account</a>
+                    <a href="{{action('CartController@loadCart')}}">{{ __('topbar.cart') }}</a>
                 </div>
             </div>
         </div>
@@ -35,7 +37,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link">{{ __('topbar.home') }}</a>
+                            <a class="nav-link" href="{{action('HomeController@loadHomePage')}}">{{ __('topbar.home') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link">{{ __('topbar.lollys') }}</a>

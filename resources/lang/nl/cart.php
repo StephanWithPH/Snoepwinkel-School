@@ -5,7 +5,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Home Language Lines
+    | Cart Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used during authentication for various
@@ -14,8 +14,9 @@ return [
     |
     */
 
-    'products' => 'Producten',
-    'noproductsfound' => 'Geen producten gevonden'
+    'title' => 'Winkelmandje',
+    'empty' => 'Het lijkt erop dat uw winkelmandje nog leeg is',
+    'order' => 'Bestellen'
 
 
 ];

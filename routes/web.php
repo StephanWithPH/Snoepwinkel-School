@@ -13,9 +13,15 @@
 
 Route::get('/', 'HomeController@loadHomePage');
 
+Route::get('/cart', 'CartController@loadCart');
+
 Route::get('/cart/add/{id}', 'CartController@addToCart');
 
+Route::get('/cart/remove/{id}', 'CartController@removeFromCart');
 
+Route::post('/order/create', 'OrderController@createOrder');
+
+Route::get('/order', 'OrderController@loadOrder');
 
 
 Route::get('/oldwelcome', function () {

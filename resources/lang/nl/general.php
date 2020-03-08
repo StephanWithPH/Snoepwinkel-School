@@ -5,7 +5,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Home Language Lines
+    | General Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used during authentication for various
@@ -14,8 +14,7 @@ return [
     |
     */
 
-    'products' => 'Producten',
-    'noproductsfound' => 'Geen producten gevonden'
+    'currency' => '€'
 
 
 ];

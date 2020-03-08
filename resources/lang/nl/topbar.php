@@ -33,7 +33,8 @@ return [
 
     'allcategories' => 'Alle categorieën',
     'shippinginformation' => 'Verzendinformatie',
-    'aboutus' => 'Over ons'
+    'aboutus' => 'Over ons',
+    'cart' => 'Winkel- mandje'
 
 
 ];
