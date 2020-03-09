@@ -24,6 +24,7 @@
             <a class="btn btn-info btn-sm ml-1" href="{{ action('CartController@addToCart', $product->id) }}">{{ __('productdetails.addtocart') }}</a>
         </div>
     </div>
+    <hr/>
     <h3 class="mb-4 mt-5">{{ __('productdetails.relatedproducts') }}</h3>
     <div class="row">
     @forelse(\App\Product::inRandomOrder()->where('id', '!=' , $product->id)->take(6)->get() as $product)
