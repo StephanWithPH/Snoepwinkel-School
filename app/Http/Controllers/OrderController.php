@@ -9,10 +9,18 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function loadOrder(){
+        if(session('productslist') == [] || !session('productslist')){
+            flash(__('flashes.orderwithoutproducts'))->error();
+            return redirect()->back();
+        }
         return view('order');
     }
     //
     public function createOrder(Request $request){
+        if(session('productslist') == [] || !session('productslist')){
+            flash(__('flashes.orderwithoutproducts'))->error();
+            return redirect()->back();
+        }
         $order = new Order();
         $order->email = $request->input('email');
         $order->firstname = $request->input('firstname');
@@ -26,10 +34,23 @@ class OrderController extends Controller
 
         $sessionProducts = [];
         foreach(session('productslist') as $sessionProduct){
-            array_push($sessionProducts, Product::find($sessionProduct['id']));
+            for($i = 0; $i < $sessionProduct['amount']; $i++){
+                array_push($sessionProducts, Product::find($sessionProduct['id']));
+            }
         }
         $order->save();
         $order->products()->saveMany($sessionProducts);
+        session(['lastCreatedOrderId' => $order->id]);
+        session()->forget('productslist');
 
+        return redirect()->action('OrderController@createOrderConfirmed');
+    }
+
+    public function createOrderConfirmed(){
+        $lastCreatedOrderId = session('lastCreatedOrderId');
+        return view('orderconfirmed', [
+            'lastCreatedOrderId' => $lastCreatedOrderId,
+            'paid' => Order::find($lastCreatedOrderId)->paid
+        ]);
     }
 }

@@ -5,7 +5,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Flashes Language Lines
+    | Product details Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used during authentication for various
@@ -14,9 +14,12 @@ return [
     |
     */
 
-    'addcartsuccess' => 'Product succesvol toegevoegd aan het winkelmandje.',
-    'removecartsuccess' => 'Product succesvol verwijderd uit het winkelmandje.',
-    'orderwithoutproducts' => 'Voeg eerst producten toe aan het winkelmandje voor het bestellen.'
+    'description' => 'Beschrijving:',
+    'productid' => 'Artikelnummer:',
+    'categories' => 'Categorieën:',
+    'addtocart' => 'Toevoegen aan winkelmandje',
+    'relatedproducts' => 'Gerelateerde producten',
+    'relatedproductsnotfound' => 'Geen gerelateerde producten gevonden'
 
 
 ];

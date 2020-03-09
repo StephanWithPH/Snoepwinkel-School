@@ -15,16 +15,13 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!">Very long link 1</a>
+                        <a href="#!" class="text-light">Alle producten</a>
                     </li>
                     <li>
-                        <a href="#!">Very long link 2</a>
+                        <a href="#!" class="text-light">Dropjes</a>
                     </li>
                     <li>
-                        <a href="#!">Very long link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Very long link 4</a>
+                        <a href="#!" class="text-light">Zuurstokken</a>
                     </li>
                 </ul>
 
@@ -41,16 +38,13 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!">Link 1</a>
+                        <a href="#!" class="text-light">Product tracking</a>
                     </li>
                     <li>
-                        <a href="#!">Link 2</a>
+                        <a href="#!" class="text-light">Over ons</a>
                     </li>
                     <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
+                        <a href="#!" class="text-light">Betaalmethoden</a>
                     </li>
                 </ul>
 
@@ -67,16 +61,13 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!">Link 1</a>
+                        <a href="#!" class="text-light">E-mail</a>
                     </li>
                     <li>
-                        <a href="#!">Link 2</a>
+                        <a href="#!" class="text-light">Telefoon</a>
                     </li>
                     <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
+                        <a href="#!" class="text-light">Contactformulier</a>
                     </li>
                 </ul>
 

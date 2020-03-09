@@ -5,7 +5,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Flashes Language Lines
+    | Order Confirmed Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used during authentication for various
@@ -13,10 +13,12 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'title' => 'Bestelling aangemaakt',
+    'newordercreated' => 'Een bestelling is aangemaakt of bijgewerkt met nummer:',
+    'gotopayment' => 'Ga naar betaling',
 
-    'addcartsuccess' => 'Product succesvol toegevoegd aan het winkelmandje.',
-    'removecartsuccess' => 'Product succesvol verwijderd uit het winkelmandje.',
-    'orderwithoutproducts' => 'Voeg eerst producten toe aan het winkelmandje voor het bestellen.'
-
+    'status' => 'Status:',
+    'awaitingpayment' => 'In afwachting van betaling',
+    'paidtrue' => 'Betaald'
 
 ];

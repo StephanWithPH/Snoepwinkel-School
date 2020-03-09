@@ -29,27 +29,31 @@
     @empty
         <div class="row">
             <div class="col-12">
-                <p class="text-center">{{ __('cart.empty') }}</p>
+                <p class="text-center mt-3">{{ __('cart.empty') }}</p>
             </div>
         </div>
+        <hr/>
     @endforelse
-    <div class="row align-items-center mt-4" style="height:100px">
-        <div class="col-2 align-items-center">
-{{--            <img src="{{$cartProduct['product']->image}}" width="100px" height="100px"/>--}}
+
+    @if($cartProducts)
+        <div class="row align-items-center mt-4" style="height:100px">
+            <div class="col-2 align-items-center">
+                {{--            <img src="{{$cartProduct['product']->image}}" width="100px" height="100px"/>--}}
+            </div>
+            <div class="col-4 align-items-center">
+                {{--            <p class="ml-3">{{$cartProduct['product']->name}}</p>--}}
+            </div>
+            <div class="col-1 align-items-center">
+                {{--            <input style="margin-top: -15px" type="number" class="form-control form-control-sm" id="{{'quantity' . $cartProduct['product']->id}}" aria-describedby="quantityBox" placeholder="Quantity" value="{{$cartProduct['amount']}}">--}}
+            </div>
+            <div class="col-1 align-items-center">
+                {{--            <p>{{$cartProduct['amount']}} x {{ __('general.currency') }}{{$cartProduct['product']->price}}</p>--}}
+            </div>
+            <div class="col-4 align-items-center">
+                <p class="text-right"><a class="btn btn-info text-white" href="{{action('OrderController@loadOrder')}}">{{__('cart.order')}}</a></p>
+            </div>
         </div>
-        <div class="col-4 align-items-center">
-{{--            <p class="ml-3">{{$cartProduct['product']->name}}</p>--}}
-        </div>
-        <div class="col-1 align-items-center">
-{{--            <input style="margin-top: -15px" type="number" class="form-control form-control-sm" id="{{'quantity' . $cartProduct['product']->id}}" aria-describedby="quantityBox" placeholder="Quantity" value="{{$cartProduct['amount']}}">--}}
-        </div>
-        <div class="col-1 align-items-center">
-{{--            <p>{{$cartProduct['amount']}} x {{ __('general.currency') }}{{$cartProduct['product']->price}}</p>--}}
-        </div>
-        <div class="col-4 align-items-center">
-            <p class="text-right"><a class="btn btn-info text-white" href="{{action('OrderController@loadOrder')}}">{{__('cart.order')}}</a></p>
-        </div>
-    </div>
+    @endif
 
 </div>
 
