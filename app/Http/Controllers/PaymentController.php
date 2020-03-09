@@ -22,6 +22,8 @@ class PaymentController extends Controller
     public function preparePayment()
     {
 
+        //TODO: Check if payments are getting created
+
 
         $payment = Mollie::api()->payments()->create([
             'amount' => [
@@ -42,6 +44,8 @@ class PaymentController extends Controller
     }
 
     public function paymentReceive(){
+        //TODO: Check if payment is received and changed to paid in database when it finishes
+
         session('latestPaymentId');
         $payment = Mollie::api()->payments()->get(session(['latestPaymentId']));
 

@@ -20,7 +20,7 @@
                     Geen
                 @endforelse
             </p>
-            <h5>{{ __('general.currency') }}{{$product->price}}</h5>
+            <h5>{{ __('general.currency') }}{{number_format($product->price, 2)}}</h5>
             <a class="btn btn-info btn-sm ml-1" href="{{ action('CartController@addToCart', $product->id) }}">{{ __('productdetails.addtocart') }}</a>
         </div>
     </div>

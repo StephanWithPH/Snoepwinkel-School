@@ -18,7 +18,7 @@
                     <a href="{{action('ProductController@loadProductDetails', $product->id)}}"><img style="height:250px" class="card-img-top" src="{{$product->image}}" alt="Card image cap"></a>
                     <div class="card-body my-3 p-0">
                         <a href="{{action('ProductController@loadProductDetails', $product->id)}}" class="text-dark"><h5 class="card-title">{{$product->name}}</h5></a>
-                        <h6 class="d-inline">{{ __('general.currency') }}{{$product->price}}</h6>
+                        <h6 class="d-inline">{{ __('general.currency') }}{{number_format($product->price, 2)}}</h6>
                         <a href="{{action('CartController@addToCart', $product->id)}}" class="btn btn-sm btn-info"><i class="fas fa-cart-plus"></i></a>
                     </div>
                 </div>

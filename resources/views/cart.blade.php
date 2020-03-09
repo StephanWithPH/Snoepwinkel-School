@@ -19,7 +19,7 @@
                 <input style="margin-top: -15px" type="number" class="form-control form-control-sm" id="{{'quantity' . $cartProduct['product']->id}}" aria-describedby="quantityBox" placeholder="Quantity" value="{{$cartProduct['amount']}}">
             </div>
             <div class="col-1 align-items-center">
-                <p>{{$cartProduct['amount']}} x {{ __('general.currency') }}{{$cartProduct['product']->price}}</p>
+                <p>{{$cartProduct['amount']}} x {{ __('general.currency') }}{{number_format($cartProduct['product']->price, 2)}}</p>
             </div>
             <div class="col-4 align-items-center">
                 <p class="text-right"><a class="text-danger" href="{{action('CartController@removeFromCart', $cartProduct['product']->id)}}"><i class="fas fa-times"></i></a></p>
