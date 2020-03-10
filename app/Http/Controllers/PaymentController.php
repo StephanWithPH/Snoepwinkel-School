@@ -33,8 +33,9 @@ class PaymentController extends Controller
             'description' => 'My first API payment',
             'webhookUrl' => action('PaymentController@paymentReceive'),
             'redirectUrl' => action('OrderController@createOrderConfirmed'),
+            'metadata' => ['order_id' => session('lastCreatedOrderId')]
         ]);
-        $payment->metadata->order_id = session('lastCreatedOrderId');
+         = session('lastCreatedOrderId');
         $payment = Mollie::api()->payments()->get($payment->id);
 
         // redirect customer to Mollie checkout page
