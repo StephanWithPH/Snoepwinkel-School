@@ -31,7 +31,7 @@ class PaymentController extends Controller
                 'value' => number_format($this->countTotalPrice(Order::find(session('lastCreatedOrderId'))->products), 2), // You must send the correct number of decimals, thus we enforce the use of strings
             ],
             'description' => 'My first API payment',
-            'webhookUrl' => action('PaymentController@paymentReceive'),
+            'webhookUrl' => action('http://home.stephantollenaar.nl/payment/receive/'),
             'redirectUrl' => action('OrderController@createOrderConfirmed'),
         ]);
 
@@ -45,9 +45,7 @@ class PaymentController extends Controller
 
     public function paymentReceive(){
         //TODO: Check if payment is received and changed to paid in database when it finishes
-
-        session('latestPaymentId');
-        $payment = Mollie::api()->payments()->get(session(['latestPaymentId']));
+        $payment = Mollie::api()->payments()->get(session('latestPaymentId'));
 
         if ($payment->isPaid())
         {
