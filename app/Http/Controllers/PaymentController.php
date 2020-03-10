@@ -10,7 +10,7 @@ use Mollie\Laravel\Facades\Mollie;
 class PaymentController extends Controller
 {
     public function countTotalPrice($products){
-        $total = 0.0;
+        $total = 0.00;
         foreach ($products as $product){
             $total += $product->price;
         }
@@ -28,7 +28,7 @@ class PaymentController extends Controller
         $payment = Mollie::api()->payments()->create([
             'amount' => [
                 'currency' => 'EUR',
-                'value' => $this->countTotalPrice(Order::find(session('lastCreatedOrderId'))->products), // You must send the correct number of decimals, thus we enforce the use of strings
+                'value' => number_format($this->countTotalPrice(Order::find(session('lastCreatedOrderId'))->products), 2), // You must send the correct number of decimals, thus we enforce the use of strings
             ],
             'description' => 'My first API payment',
             'webhookUrl' => action('PaymentController@paymentReceive'),
