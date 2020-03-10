@@ -35,7 +35,6 @@ class PaymentController extends Controller
             'redirectUrl' => action('OrderController@createOrderConfirmed'),
             'metadata' => ['order_id' => session('lastCreatedOrderId')]
         ]);
-         = session('lastCreatedOrderId');
         $payment = Mollie::api()->payments()->get($payment->id);
 
         // redirect customer to Mollie checkout page
