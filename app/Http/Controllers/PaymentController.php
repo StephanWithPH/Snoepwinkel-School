@@ -44,7 +44,7 @@ class PaymentController extends Controller
 
     public function paymentReceive(Request $request){
         //TODO: Check if payment is received and changed to paid in database when it finishes
-        if (! $request->has('id')) {
+        if (!$request->has('id')) {
             return;
         }
 
