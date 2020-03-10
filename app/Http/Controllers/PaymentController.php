@@ -38,7 +38,6 @@ class PaymentController extends Controller
             ],
         ]);
         $payment = Mollie::api()->payments()->get($payment->id);
-        dd($payment->metadata->order_id);
         // redirect customer to Mollie checkout page
         return redirect($payment->getCheckoutUrl(), 303);
     }
