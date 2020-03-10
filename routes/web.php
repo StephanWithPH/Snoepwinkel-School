@@ -13,7 +13,11 @@
 
 Route::get('/', 'HomeController@loadHomePage');
 
+Route::get('/aboutus', 'AboutUsController@loadAboutUs');
+
 Route::get('/product-details/{id}', 'ProductController@loadProductDetails');
+
+Route::get('/category/{id}', 'CategoryController@loadCategory');
 
 Route::get('/cart', 'CartController@loadCart');
 

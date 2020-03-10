@@ -51,13 +51,10 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link">{{ __('topbar.allcategories') }}</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link">{{ __('topbar.shippinginformation') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">{{ __('topbar.aboutus') }}</a>
+                            <a class="nav-link" href="{{ action('AboutUsController@loadAboutUs') }}">{{ __('topbar.aboutus') }}</a>
                         </li>
                     </ul>
                 </div>
