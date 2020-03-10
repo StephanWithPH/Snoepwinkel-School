@@ -34,22 +34,23 @@ class PaymentController extends Controller
             'webhookUrl' => action('PaymentController@paymentReceive'),
             'redirectUrl' => action('OrderController@createOrderConfirmed'),
         ]);
-
+        $payment->metadata->order_id = session('lastCreatedOrderId');
         $payment = Mollie::api()->payments()->get($payment->id);
-
-        session(['latestPaymentId' => $payment->id]);
 
         // redirect customer to Mollie checkout page
         return redirect($payment->getCheckoutUrl(), 303);
     }
 
-    public function paymentReceive(){
+    public function paymentReceive(Request $request){
         //TODO: Check if payment is received and changed to paid in database when it finishes
-        $payment = Mollie::api()->payments()->get(session('latestPaymentId'));
+        if (! $request->has('id')) {
+            return;
+        }
 
-        if ($payment->isPaid())
-        {
-            $order = Order::find(session('lastCreatedOrderId'));
+        $payment = Mollie::api()->payments()->get($request->id);
+
+        if($payment->isPaid()) {
+            $order = Order::find($payment->metadata->order_id);
             $order->paid = true;
 
             $order->save();

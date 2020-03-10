@@ -29,7 +29,7 @@ Route::get('/order', 'OrderController@loadOrder');
 
 Route::get('/payment/prepare', 'PaymentController@preparePayment');
 
-Route::get('/payment/receive', 'PaymentController@paymentReceive');
+Route::post('/payment/receive', 'PaymentController@paymentReceive');
 
 
 Route::get('/oldwelcome', function () {
