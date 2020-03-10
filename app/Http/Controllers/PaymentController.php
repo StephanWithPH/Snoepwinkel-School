@@ -31,7 +31,7 @@ class PaymentController extends Controller
                 'value' => number_format($this->countTotalPrice(Order::find(session('lastCreatedOrderId'))->products), 2), // You must send the correct number of decimals, thus we enforce the use of strings
             ],
             'description' => 'My first API payment',
-            'webhookUrl' => action('http://home.stephantollenaar.nl/payment/receive/'),
+            'webhookUrl' => action('PaymentController@paymentReceive'),
             'redirectUrl' => action('OrderController@createOrderConfirmed'),
         ]);
 
