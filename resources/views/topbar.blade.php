@@ -39,14 +39,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{action('HomeController@loadHomePage')}}">{{ __('topbar.home') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link">{{ __('topbar.lollys') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">{{ __('topbar.liquorice') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Zuurstokken</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ __('topbar.categories') }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @php($categories = \App\Category::all())
+                                @foreach($categories as $category)
+                                    <a class="dropdown-item" href="{{action('CategoryController@loadCategory', $category->id)}}">{{$category->name}}</a>
+                                @endforeach
+                            </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
