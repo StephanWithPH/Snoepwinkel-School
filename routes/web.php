@@ -39,3 +39,5 @@ Route::post('/payment/receive', 'PaymentController@paymentReceive');
 Route::get('/oldwelcome', function () {
     return view('welcome');
 });
+
+Auth::routes();
