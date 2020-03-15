@@ -36,6 +36,12 @@ Route::get('/payment/prepare', 'PaymentController@preparePayment');
 Route::post('/payment/receive', 'PaymentController@paymentReceive');
 
 
+Route::get('/account', 'AccountController@loadMyAccount');
+Route::get('/logout', 'Auth\LoginController@logout');
+
+
+
+
 Route::get('/oldwelcome', function () {
     return view('welcome');
 });

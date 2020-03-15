@@ -11,6 +11,7 @@
 
 </head>
 <body>
+@include('cartbutton')
 @include('topbar')
 @yield('body')
 @include('footer')

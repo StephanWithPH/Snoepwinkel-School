@@ -23,7 +23,7 @@
 
                 </div>
                 <div class="col-1">
-                    <a href="{{action('CartController@loadCart')}}">{{ __('topbar.cart') }}</a>
+                    <a href="{{action('AccountController@loadMyAccount')}}">{{ __('topbar.account') }}</a>
                 </div>
             </div>
         </div>

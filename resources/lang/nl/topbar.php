@@ -35,7 +35,10 @@ return [
     'shippinginformation' => 'Verzendinformatie',
     'aboutus' => 'Over ons',
     'cart' => 'Winkel- mandje',
-    'categories' => 'Categorieën'
+    'categories' => 'Categorieën',
+
+    /* Account */
+    'account' => 'Mijn account'
 
 
 ];
