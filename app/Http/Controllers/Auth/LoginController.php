@@ -36,7 +36,7 @@ class LoginController extends Controller
 
     protected function authenticated() {
         if (Auth::check()) {
-            return redirect()->action('AccountController@loadMyAccount');
+            return redirect(session('url')['intended']);
         }
     }
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -11,6 +13,7 @@ class AccountController extends Controller
     }
 
     public function loadMyAccount(){
-        return view('myaccount');
+        $user = Auth::user();
+        return view('myaccount', compact('user'));
     }
 }

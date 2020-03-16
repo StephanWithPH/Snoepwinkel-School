@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function loadOrder(){
         if(session('productslist') == [] || !session('productslist')){
             flash(__('flashes.orderwithoutproducts'))->error();
@@ -40,6 +46,7 @@ class OrderController extends Controller
         }
         $order->save();
         $order->products()->saveMany($sessionProducts);
+        Auth::user()->orders()->save($order);
         session(['lastCreatedOrderId' => $order->id]);
         session()->forget('productslist');
 
