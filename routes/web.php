@@ -25,6 +25,8 @@ Route::get('/cart/add/{id}', 'CartController@addToCart');
 
 Route::get('/cart/remove/{id}', 'CartController@removeFromCart');
 
+Route::post('/cart/amount', 'CartController@amountChange');
+
 Route::post('/order/create', 'OrderController@createOrder');
 
 Route::get('/order/confirmed', 'OrderController@createOrderConfirmed');
@@ -38,7 +40,6 @@ Route::post('/payment/receive', 'PaymentController@paymentReceive');
 
 Route::get('/account', 'AccountController@loadMyAccount');
 Route::get('/logout', 'Auth\LoginController@logout');
-
 
 
 

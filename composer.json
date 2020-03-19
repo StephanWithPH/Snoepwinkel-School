@@ -14,7 +14,8 @@
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
         "laravelcollective/html": "^6.1",
-        "mollie/laravel-mollie": "2.9"
+        "mollie/laravel-mollie": "2.9",
+        "spatie/laravel-cookie-consent": "^2.12"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

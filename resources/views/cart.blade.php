@@ -15,13 +15,17 @@
             <div class="col-4 align-items-center">
                 <p class="ml-3">{{$cartProduct['product']->name}}</p>
             </div>
-            <div class="col-1 align-items-center">
-                <input style="margin-top: -15px" type="number" class="form-control form-control-sm" id="{{'quantity' . $cartProduct['product']->id}}" aria-describedby="quantityBox" placeholder="Quantity" value="{{$cartProduct['amount']}}">
+            <div class="col-2 align-items-center">
+                {{ Form::open(array('action' => 'CartController@amountChange')) }}
+                <input type="hidden" name="id" value="{{$cartProduct['product']->id}}"/>
+                <input style="margin-top: -15px" type="number" name="amount" class="form-control form-control-sm" id="{{'quantity' . $cartProduct['product']->id}}" aria-describedby="quantityBox" placeholder="Quantity" value="{{$cartProduct['amount']}}"/>
+                <button type="submit"><i class="fas fa-sync-alt"></i></button>
+                {{ Form::close() }}
             </div>
             <div class="col-1 align-items-center">
                 <p>{{$cartProduct['amount']}} x {{ __('general.currency') }}{{number_format($cartProduct['product']->price, 2)}}</p>
             </div>
-            <div class="col-4 align-items-center">
+            <div class="col-3 align-items-center">
                 <p class="text-right"><a class="text-danger" href="{{action('CartController@removeFromCart', $cartProduct['product']->id)}}"><i class="fas fa-times"></i></a></p>
             </div>
         </div>

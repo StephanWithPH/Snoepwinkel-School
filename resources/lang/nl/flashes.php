@@ -16,7 +16,8 @@ return [
 
     'addcartsuccess' => 'Product succesvol toegevoegd aan het winkelmandje.',
     'removecartsuccess' => 'Product succesvol verwijderd uit het winkelmandje.',
-    'orderwithoutproducts' => 'Voeg eerst producten toe aan het winkelmandje voor het bestellen.'
+    'orderwithoutproducts' => 'Voeg eerst producten toe aan het winkelmandje voor het bestellen.',
+    'changeamountsuccess' => 'De hoeveelheid van het geselecteerde product is succesvol aangepast.'
 
 
 ];

@@ -36,7 +36,12 @@ class LoginController extends Controller
 
     protected function authenticated() {
         if (Auth::check()) {
-            return redirect(session('url')['intended']);
+            if(Auth::user()->is_admin){
+                return redirect('/admin');
+            }
+            else{
+                return redirect(session('url')['intended']);
+            }
         }
     }
 

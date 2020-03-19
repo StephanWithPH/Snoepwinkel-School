@@ -52,4 +52,21 @@ class CartController extends Controller
         return redirect()->action('CartController@loadCart');
 
     }
+
+    public function amountChange(Request $request){
+        $id = $request->input('id');
+        $amount = $request->input('amount');
+        $session = session('productslist');
+        foreach($session as $key => $item){
+            if($item['id'] == $id){
+                $session[$key]['amount'] = $amount;
+                $itemExists = true;
+            }
+        }
+        session(['productslist' => $session]);
+        flash(__('flashes.changeamountsuccess'))->success();
+        return redirect()->back();
+    }
+
+
 }
